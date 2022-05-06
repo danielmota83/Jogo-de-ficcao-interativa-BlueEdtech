@@ -8,7 +8,7 @@ console.log('         ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 console.log();
 
 console.log(
-    `De agora em diante lhe chamaremos apenas de "PROFESSOR".\nVocê está coordenando uma assalto à Casa da Moeda da \nEspanha e está da sua casa coordenando um grupo de 4 ASSALTANTES.\nEstes assaltantes estão com alguns refens e com a missão de, \naté daqui no máximo 4 dias, sair da Casa da Moeda com \ntodo o ouro que estiver lá. SÃO 150 TONELADAS DE \nOURO QUE DEVE SER DERRETIDO PARA POSSIBILITAR A FUGA. \nPortanto, o seu papel Professor, é fazer com que todos saim desse assalto vivos e ricos! `,
+    `De agora em diante lhe chamaremos apenas de "PROFESSOR".\nVocê está coordenando uma assalto à Casa da Moeda da \nEspanha e está, da sua casa, coordenando um grupo de 4 ASSALTANTES.\nEstes assaltantes estão com alguns refens e com a missão de, \naté daqui no máximo 4 dias, sair da Casa da Moeda com \ntodo o ouro que estiver lá. SÃO 180 TONELADAS DE \nOURO QUE DEVE SER DERRETIDO PARA POSSIBILITAR A FUGA. \nPortanto, o seu papel Professor, é fazer com que todos saim desse \nassalto vivos e ricos! `,
 );
 console.log();
 console.log('PRESSIONE ENTER PARA COMEÇAR');
@@ -22,7 +22,7 @@ let professor = {
     sanidade: 90,
     energia: 70,
     falaPadrao() {
-        console.log('\n*Professor* - Apenas sigam o plano!\n');
+        console.log('\n*FALA DO Professor* - Apenas sigam o plano!\n');
     },
     status() {
         let status = `! ${this.nome} !\n _ Força: ${this.força}\n _ Sanidade: ${this.sanidade} \n_ Energia: ${this.energia} `;
@@ -42,7 +42,9 @@ let assaltantes = {
         sanidade: 40,
         energia: 90,
         falaPadrao() {
-            console.log('\n*Berlin* - Poderia fazer esse assalto sozinho!\n');
+            console.log(
+                '\n*FALA DO BERLIN* - Poderia fazer esse assalto sozinho!\n',
+            );
         },
         status() {
             let status = `! ${this.nome} !\n _ Força: ${this.força}\n _ Sanidade: ${this.sanidade}\n _ Energia: ${this.energia} `;
@@ -61,7 +63,7 @@ let assaltantes = {
         sanidade: 20,
         energia: 90,
         falaPadrao() {
-            console.log('\n*Tokio* - Eu confio no professor!\n');
+            console.log('\n*FALA DA TOKIO* - Eu confio no professor!\n');
         },
         status() {
             let status = `! ${this.nome}!\n _ Força: ${this.força}\n _ Sanidade: ${this.sanidade}\n _ Energia: ${this.energia} `;
@@ -80,7 +82,9 @@ let assaltantes = {
         sanidade: 50,
         energia: 60,
         falaPadrao() {
-            console.log('\n*Denver* - Acho que isso não vai dar certo \n!');
+            console.log(
+                '\n*FALA DO DENVER* - Acho que isso não vai dar certo !\n',
+            );
         },
         status() {
             let status = `! ${this.nome} !\n _ Força: ${this.força}\n _ Sanidade: ${this.sanidade}\n _ Energia: ${this.energia} `;
@@ -99,7 +103,7 @@ let assaltantes = {
         sanidade: 60,
         energia: 60,
         falaPadrao() {
-            console.log('\n*Helsinki* - Gosto muito de todos vocês!\n');
+            console.log('\n*FALA DO HELSINKI* - Gosto muito de todos vocês!\n');
         },
         status() {
             let status = `! ${this.nome} ! \n_ Força: ${this.força}\n_ Sanidade: ${this.sanidade}\n _ Energia: ${this.energia} `;
@@ -120,7 +124,7 @@ let policiaEspanhola = {
     energia: 80,
     falaPadrao() {
         console.log(
-            '\n*Polícia Espanhola* - Temos que matar esses assaltantes!\n',
+            '\n*FALA DA POLÍCIA* - Temos que matar esses assaltantes!\n',
         );
     },
     status() {
@@ -135,6 +139,8 @@ let policiaEspanhola = {
 };
 
 //DECLARAÇÃO DAS FUNÇÕES
+
+//AVANÇO DAS HORAS DO DIA
 function avançarJogo(horasAgora, horasCorridas) {
     console.log();
     console.log('Pressione enter para avançar');
@@ -147,26 +153,24 @@ function avançarJogo(horasAgora, horasCorridas) {
     );
     return horas;
 }
-
-function statusPersonagens(){
+//EXIBE O STATUS DE CADA PERSONAGEM E OUTRAS INFORMAÇÕES IMPORTANTES DE DECISÃO DO JOGO
+function statusPersonagens() {
     console.log(professor.status());
-        console.log('        ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨              ');
-        console.log('ASSALTANTES:');
-        console.log(assaltantes.Berlin.status());
-        console.log(assaltantes.Denver.status());
-        console.log(assaltantes.Tokio.status());
-        console.log(assaltantes.Helsinki.status());
-        console.log('        ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨              ');
-        console.log(policiaEspanhola.status());
-        console.log('        ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨              ');
-        console.log(
-            `Quantidade de ouro derretido: ${ouroDerretido} Toneladas.`,
-        );
-        console.log(`Número de refens liberados: ${refensLiberados}. `);
+    console.log('        ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨              ');
+    console.log('ASSALTANTES:');
+    console.log(assaltantes.Berlin.status());
+    console.log(assaltantes.Denver.status());
+    console.log(assaltantes.Tokio.status());
+    console.log(assaltantes.Helsinki.status());
+    console.log('        ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨              ');
+    console.log(policiaEspanhola.status());
+    console.log('        ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨              ');
+    console.log(`Quantidade de ouro derretido: ${ouroDerretido} Toneladas.`);
+    console.log(`Número de refens liberados: ${refensLiberados}. `);
 
-        console.log();
+    console.log();
 }
-
+//PEGA A ENTRADA DO PROMPT COM RESPOSTA SIM OU NÃO E VERIFICA A ENTRADA CORRETA
 function verificarSimNao() {
     while (true) {
         console.log();
@@ -186,6 +190,34 @@ function verificarSimNao() {
             return comandoAosAssaltantes;
         }
     }
+}
+
+//RESET DA CONDIÇÃO INICIAL CASO O JOGADOR QUEIRA COMEÇAR NOVAMENTE
+function resetStatus() {
+    professor.força = 40;
+    professor.sanidade = 90;
+    professor.energia = 70;
+    assaltantes.Berlin.força = 70;
+    assaltantes.Berlin.sanidade = 40;
+    assaltantes.Berlin.energia = 90;
+    assaltantes.Tokio.força = 90;
+    assaltantes.Tokio.sanidade = 20;
+    assaltantes.Tokio.energia = 90;
+    assaltantes.Denver.força = 90;
+    assaltantes.Denver.sanidade = 50;
+    assaltantes.Denver.energia = 60;
+    assaltantes.Helsinki.força = 80;
+    assaltantes.Helsinki.sanidade = 60;
+    assaltantes.Helsinki.energia = 60;
+    policiaEspanhola.força = 90;
+    policiaEspanhola.sanidade = 30;
+    policiaEspanhola.energia = 80;
+    dia = 1;
+    horas = 8;
+    escolhaDoLider = '';
+    ouroDerretido = 0;
+    refensLiberados = 0;
+    console.clear();
 }
 
 //DECLARAÇÃO DE LISTAS E VARIÁVEIS
@@ -222,7 +254,7 @@ Início: while (true) {
             } dia(s) para executar o plano`,
         );
         console.log(
-            '--------------------------------------------------------------------------------------',
+            '-------------------------------------------------------------------',
         );
         //MENSAGENS DIFERENTES AO PROFESSOR A CADA DIA
         if (dia == 1) {
@@ -266,7 +298,7 @@ Início: while (true) {
                         `\n*Professor*: Digo a todos vocês, o escolhido do dia para comandar \no assalto é o (a) ${escolhaDoLider}, todos os demais devem \nseguir as orientações que o lider der, desrespeitem-o apenas se EU mandar!\n`,
                     );
                     assaltantes.Berlin.falaPadrao();
-
+                    //ESSA FUNÇÃO PEGA A ENTRADA DO PROMPT COM RESPOSTA SIM OU NÃO E VERIFICA A ENTRADA CORRETA
                     verificarSimNao();
 
                     if (comandoAosAssaltantes == 'sim') {
@@ -303,7 +335,7 @@ Início: while (true) {
                                 `Que sorte! Neste dia ${dia}, Berlin está tranquilo e esperto, \nvai derreter bastante ouro, deixar os assaltantes \nmotivados e jogar um pouco de dinheiro para a populaçao que \nestá fora da casa da Moeda. A população \ncomum espanhola estão apoiando o assalto!\n`,
                             );
 
-                            ouroDerretido += 20;
+                            ouroDerretido += 30;
                             assaltantes.Berlin.mudaStatus(10, 10, 10);
                             assaltantes.Tokio.mudaStatus(10, 10, 10);
                             assaltantes.Denver.mudaStatus(10, 10, 10);
@@ -341,7 +373,7 @@ Início: while (true) {
                                 `\nQue sorte! Neste dia ${dia}, Tokio está tranquila e esperta, \nvai derreter bastante ouro, deixar os assaltantes \nmotivados e jogar um pouco de dinheiro para a populaçao que está \nfora da casa da Moeda. A população comum espanhola estão apoiando o assalto!\n`,
                             );
 
-                            ouroDerretido += 20;
+                            ouroDerretido += 30;
                             assaltantes.Berlin.mudaStatus(10, 10, 10);
                             assaltantes.Tokio.mudaStatus(10, 20, 10);
                             assaltantes.Denver.mudaStatus(10, 10, 10);
@@ -387,7 +419,7 @@ Início: while (true) {
                     } else {
                         if (dia == 1) {
                             console.log(
-                                `\nProfessor, infelizmente neste dia ${dia},\n Denver está triste e perturbardo, e ele liberou alguns \nrefens, mas continuou a derreter ouro. \n`,
+                                `\nProfessor, infelizmente neste dia ${dia},\nDenver está triste e perturbardo, e ele liberou alguns \nrefens, mas continuou a derreter ouro. \n`,
                             );
                             refensLiberados += 5;
                             ouroDerretido += 10;
@@ -441,7 +473,7 @@ Início: while (true) {
                                 `\nQue sorte! Neste dia ${dia}, Helsinki \nestá tranquilo e esperto, vai derreter bastante ouro, \ndeixar os assaltantes motivados e jogar um pouco de \ndinheiro para a populaçao que está fora \nda casa da Moeda. A população comum espanhola estão apoiando o assalto!\n`,
                             );
 
-                            ouroDerretido += 20;
+                            ouroDerretido += 25;
                             assaltantes.Berlin.mudaStatus(10, 10, 10);
                             assaltantes.Tokio.mudaStatus(10, 20, 10);
                             assaltantes.Denver.mudaStatus(10, 10, 10);
@@ -513,7 +545,7 @@ Início: while (true) {
                 assaltantes.Denver.falaPadrao();
                 avançarJogo(horas, 2);
             } else if (escolhaAleatoria == 2) {
-                refensLiberados +=5
+                refensLiberados += 5;
                 assaltantes.Berlin.mudaStatus(-10, 0, 0);
                 assaltantes.Tokio.mudaStatus(-10, 0, 0);
                 assaltantes.Denver.mudaStatus(-10, 0, 0);
@@ -533,7 +565,7 @@ Início: while (true) {
                     '\nO Professor fica desnorteado, vi ter que mudar alguns planos.\n',
                 );
                 assaltantes.Tokio.falaPadrao();
-                avançarJogo(horas, 1);
+                avançarJogo(horas, 2);
             } else if (escolhaAleatoria == 4) {
                 ouroDerretido += 5;
                 assaltantes.Berlin.mudaStatus(-10, 0, 0);
@@ -634,34 +666,41 @@ Início: while (true) {
 
         //EXIBE O ESTATUS DE CADA PERSONAGEM , A QTDE DE OURO DERRETIDA E O # DE REFENS
         statusPersonagens();
-               
+
         console.log('PRESSIONE ENTER PARA CONTINUAR');
         prompt();
         console.clear();
 
         //FINALIZA O JOGO ANTES DO FINAL DOS 4 DIAS
-        if (ouroDerretido >= 150) {
-            console.log('\nVocês conseguiram derreter todo o ouro, \no plano deu certo e o plano de fuga foi executado!!\n');
+        if (ouroDerretido >= 180) {
+            console.log(
+                '\nVocês conseguiram derreter todo o ouro, \no plano deu certo e o plano de fuga foi executado!!\n',
+            );
             console.log('ASSALTANTES VENCERAM, PARABÉNS PROFESSOR!');
             console.log(
                 '\nOs assaltantes cantam em uníssono:\nBELA CIAO, BELA CIAO, BELA CIAO CIAO CIAO!!',
             );
             console.log(
-                '---------------------------------------------------------------'),
-                console.log('STATUS FINAL DOS PERSONAGENS:');
-                statusPersonagens();
+                '---------------------------------------------------------------',
+            ),
+                console.log(
+                    'PRESSIONE ENTER PARA O STATUS FINAL DOS PERSONAGENS:',
+                );
+            prompt();
+            console.clear();
+            statusPersonagens();
             break;
-        }
-
-        else if (refensLiberados >= 50) {
+        } else if (refensLiberados >= 50) {
             console.log(
-                '\nO JOGO ACABOU PROFESSOR.\NComo todos os refens foram liberaos, a polícia \nespanhola invadiu a casa da moeda e prendeu todos os assalntantes \ne depois prendeu tmbem voce, Professor.\n',
+                '\nO JOGO ACABOU PROFESSOR. Como todos os refens foram liberaos, a polícia \nespanhola invadiu a casa da moeda e prendeu todos os assalntantes \ne depois prendeu tmbem voce, Professor.\n',
             );
-            console.log('STATUS FINAL DOS PERSONAGENS:');
-                statusPersonagens();
+            console.log('PRESSIONE ENTER PARA O STATUS FINAL DOS PERSONAGENS:');
+            prompt();
+            console.clear();
+            statusPersonagens();
             break;
         }
-
+        //PREPARA O RETORNO DO LOOP PARA CONTAGEM DE MAIS UM DIA
         if (dia != 4) {
             console.log(
                 `\nProfessor, como já são ${horas}:00h do dia ${dia} do assalto.\nÉ melhor descansar, pois amanhã terá que continuar com esse difícil plano.\nAMANHÃ SERÁ UM DIA IMPORTANTE!\n`,
@@ -673,7 +712,9 @@ Início: while (true) {
             horas = 8;
             dia += 1;
             escolhaDoLider = '';
+            console.clear();
         } else {
+            //TERMINA O LOOP NO FINAL DO 4º DIA
             console.log(
                 `\nProfessor já são ${horas}:00h do dia ${dia} do assalto.\nHora limite da decisão.\nMesmo sem ter todo o ouro derretido temos que tentar a fuga!\n`,
             ),
@@ -684,105 +725,104 @@ Início: while (true) {
         }
     }
     //PERGUNTA E VERIFICAÇÃO PARA JOGAR NOVAMENTE CASO O JOGO TERMINE ANTES DOS 4 DIAS
-    if (refensLiberados >= 50 || ouroDerretido>=150){
-           while (true) {
-        console.log();
-        console.log('DESEJA JOGAR NOVAMENTE?');
-        console.log();
-        resposta = prompt('').toLowerCase();
-        if (resposta !== 'sim' && resposta !== 'nao') {
-            console.log(
-                '\nVocê está emocionado com esse jogo eletrizante né, mas por favor você deve responte apenas "sim" ou nao\n',
-            );
-        } else {
-            if (resposta == 'sim') {
-                dia = 1;
-                horas = 8;
-                continue Início;
+    if (refensLiberados >= 50 || ouroDerretido >= 180) {
+        while (true) {
+            console.log();
+            console.log('DESEJA JOGAR NOVAMENTE?');
+            console.log();
+            resposta = prompt('').toLowerCase();
+            if (resposta !== 'sim' && resposta !== 'nao') {
+                console.log(
+                    '\nVocê está emocionado com esse jogo eletrizante né, mas por favor você deve responte apenas "sim" ou nao\n',
+                );
             } else {
-                console.log('ATÉ A PRÓXIMA!');
-                break Início;
+                if (resposta == 'sim') {
+                    resetStatus();
+                    continue Início;
+                } else {
+                    console.log('ATÉ A PRÓXIMA!');
+                    break Início;
+                }
             }
         }
-    } 
-    //RESULTADO DO JOGO APÓS OS 4 DIAS DE ASSALTO
-    }else {
-        if (
-        policiaEspanhola.força <= 0 ||
-        policiaEspanhola.energia <= 0 ||
-        policiaEspanhola.sanidade <= 0
-    ) {
-        console.log('ASSALTANTES VENCERAM, PARABÉNS PROFESSOR!');
-        console.log(
-            '\nOs assaltantes cantam em uníssono:\nBELA CIAO, BELA CIAO, BELA CIAO CIAO CIAO!!',
-        );
-        console.log(
-            '---------------------------------------------------------------',
-        );
-      
-    } else if (
-        professor.energia <= 0 ||
-        professor.energia <= 0 ||
-        professor.energia <= 0
-    ) {
-        console.log(
-            '\nProfessor, você nao aguentou o stress, e se entregou à polícia. \nSem a seu comando a Casa da Moeda foi invadida e todos os assaltantes se entregaram.\n',
-        );
-    } else if (
-        policiaEspanhola.força +
-            policiaEspanhola.energia +
-            policiaEspanhola.sanidade >
-        (assaltantes.Berlin.força +
-            assaltantes.Berlin.energia +
-            assaltantes.Berlin.sanidade +
-            assaltantes.Tokio.força +
-            assaltantes.Tokio.energia +
-            assaltantes.Tokio.sanidade +
-            assaltantes.Berlin.força +
-            assaltantes.Berlin.energia +
-            assaltantes.Berlin.sanidade +
-            assaltantes.Tokio.força +
-            assaltantes.Tokio.energia +
-            assaltantes.Tokio.sanidade) /
-            4
-    ) {
-        console.log(
-            'A polícia espanhola conseguiu entrar na Casa da Moeda, \nrenderam os assaltantes e eles entregaram o professor, \nestão todos em prisão perpétua.',
-        );
+        //RESULTADO DO JOGO APÓS OS 4 DIAS DE ASSALTO
     } else {
-        console.log(
-            `Parabéns professor, mesmo sem derreter todo o ouro, \nfoi derretido ${ouroDerretido} toneladas, o que é ouro suficiente para todos. \nTodos os assaltantes conseguiram fugir no plano especial de fuga!`,
-        );
-        console.log(
-            '\nOs assaltantes cantam em uníssono:\nBELA CIAO, BELA CIAO, BELA CIAO CIAO CIAO!!',
-        );
-        console.log(
-            '---------------------------------------------------------------',
-        );
-    }
-    
-
-
-    //PERGUNTA E VERIFICAÇÃO PARA JOGAR NOVAMENTE
-    while (true) {
-        console.log();
-        console.log('DESEJA JOGAR NOVAMENTE?');
-        console.log();
-        resposta = prompt('').toLowerCase();
-        if (resposta !== 'sim' && resposta !== 'nao') {
+        if (
+            policiaEspanhola.força <= 0 ||
+            policiaEspanhola.energia <= 0 ||
+            policiaEspanhola.sanidade <= 0
+        ) {
+            console.log('ASSALTANTES VENCERAM, PARABÉNS PROFESSOR!');
             console.log(
-                '\nVocê está emocionado com esse jogo eletrizante né, mas por favor você deve responte apenas "sim" ou nao\n',
+                '\nOs assaltantes cantam em uníssono:\nBELA CIAO, BELA CIAO, BELA CIAO CIAO CIAO!!',
+            );
+            console.log(
+                '---------------------------------------------------------------',
+            );
+        } else if (
+            professor.energia <= 0 ||
+            professor.energia <= 0 ||
+            professor.energia <= 0
+        ) {
+            console.log(
+                '\nProfessor, você nao aguentou o stress, e se entregou à polícia. \nSem a seu comando a Casa da Moeda foi invadida e todos os assaltantes se entregaram.\n',
+            );
+        } else if (
+            policiaEspanhola.força +
+                policiaEspanhola.energia +
+                policiaEspanhola.sanidade >
+            (assaltantes.Berlin.força +
+                assaltantes.Berlin.energia +
+                assaltantes.Berlin.sanidade +
+                assaltantes.Tokio.força +
+                assaltantes.Tokio.energia +
+                assaltantes.Tokio.sanidade +
+                assaltantes.Berlin.força +
+                assaltantes.Berlin.energia +
+                assaltantes.Berlin.sanidade +
+                assaltantes.Tokio.força +
+                assaltantes.Tokio.energia +
+                assaltantes.Tokio.sanidade) /
+                4
+        ) {
+            console.log(
+                'A polícia espanhola conseguiu entrar na Casa da Moeda, \nrenderam os assaltantes e eles entregaram o professor, \nestão todos em prisão perpétua.',
             );
         } else {
-            if (resposta == 'sim') {
-                dia = 1;
-                horas = 8;
-                continue Início;
+            console.log(
+                `Parabéns professor, mesmo sem derreter todo o ouro, \nfoi derretido ${ouroDerretido} toneladas, o que é ouro suficiente para todos. \nTodos os assaltantes conseguiram fugir no plano especial de fuga!`,
+            );
+            console.log(
+                '\nOs assaltantes cantam em uníssono:\nBELA CIAO, BELA CIAO, BELA CIAO CIAO CIAO!!',
+            );
+            console.log(
+                '---------------------------------------------------------------',
+            );
+        }
+        console.log('PRESSIONE ENTER PARA O STATUS FINAL DOS PERSONAGENS:');
+        prompt();
+        console.clear();
+        statusPersonagens();
+
+        //PERGUNTA E VERIFICAÇÃO PARA JOGAR NOVAMENTE
+        while (true) {
+            console.log();
+            console.log('DESEJA JOGAR NOVAMENTE?');
+            console.log();
+            resposta = prompt('').toLowerCase();
+            if (resposta !== 'sim' && resposta !== 'nao') {
+                console.log(
+                    '\nVocê está emocionado com esse jogo eletrizante né, mas por favor você deve responte apenas "sim" ou nao\n',
+                );
             } else {
-                console.log('ATÉ A PRÓXIMA!');
-                break Início;
+                if (resposta == 'sim') {
+                    resetStatus();
+                    continue Início;
+                } else {
+                    console.log('ATÉ A PRÓXIMA!');
+                    break Início;
+                }
             }
         }
     }
-}
 }
